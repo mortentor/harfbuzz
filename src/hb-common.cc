@@ -67,7 +67,7 @@ _hb_options_init ()
         p = c + strlen (c);
 
 #define OPTION(name, symbol) \
-	if (0 == strncmp (c, name, p - c) && strlen (name) == p - c) do { u.opts.symbol = true; } while (0)
+	if (0 == strncmp (c, name, p - c) && strlen (name) == (size_t) ( p - c ) ) do { u.opts.symbol = true; } while (0)
 
       OPTION ("uniscribe-bug-compatible", uniscribe_bug_compatible);
       OPTION ("aat", aat);
